@@ -1,0 +1,16 @@
+html {
+  --hue: 28;
+  --saturation: 70%;
+  --lightness: 55%;
+
+  --color-black: #161e2e;
+  --color-gray-ghost: #F9FAFB;
+  --color-gray: hsl(220, 20%, 84%);
+  --color-gray-dark: hsl(220, 20%, 45%);
+  --color-primary: hsl(var(--hue), var(--saturation), var(--lightness));
+  --color-primary-light: hsl(var(--hue), calc(var(--saturation) + 16%), calc(var(--lightness) + 8%));
+  --color-primary-ghost: hsla(var(--hue), var(--saturation), var(--lightness), 0.2);
+  --border-radius: .375rem;
+
+  --transition: .16s ease;
+}

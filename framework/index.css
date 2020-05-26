@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;900&display=swap');
+
+@import "./variables.css";
+@import "./typography.css";
+@import "./forms.css";
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: var(--color-primary-ghost);
+}
+
+body {
+  margin: 2rem auto;
+  padding: 0 1rem;
+
+  background-color: var(--color-gray-ghost);
+  width: 768px;
+  max-width: 100%;
+}
+
+hr {
+  margin: 2rem 0;
+
+  border: 0;
+  border-bottom: 1px solid var(--color-gray);
+}
