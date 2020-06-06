@@ -12,5 +12,6 @@ html {
   --color-primary-ghost: hsla(var(--hue), var(--saturation), var(--lightness), 0.2);
   --border-radius: .375rem;
 
-  --transition: .16s ease;
+  --transition: 0s;
+  --focus-outline: 0 0 0 3px var(--color-primary-ghost);
 }

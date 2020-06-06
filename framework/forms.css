@@ -1,4 +1,6 @@
 form {
+  --field-padding: 0.6rem 0.75rem;
+
   margin: auto;
   padding: 2rem 2.5rem;
 
@@ -18,23 +20,27 @@ form > header {
   border-top-left-radius: inherit;
 }
 
+form > header h3 {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
 label {
   position: relative;
   display: block;
+  margin-top: 1rem;
   font-weight: 500;
 }
 
-label > input {
+label > input,
+label > select,
+label > textarea {
   margin-top: 0.25rem;
   display: block;
 }
 
-label + label {
-  margin-top: 1rem;
-}
-
 input {
-  padding: 0.6rem 0.75rem;
+  padding: var(--field-padding);
 
   border: 1px solid var(--color-gray);
   border-radius: var(--border-radius);
@@ -45,16 +51,19 @@ input {
   transition: border var(--transition), box-shadow var(--transition);
 }
 
-input:focus {
+input:focus,
+select:focus {
   border-color: var(--color-primary);
   outline: 0;
-  box-shadow: 0 0 0 3px var(--color-primary-ghost);
+  box-shadow: var(--focus-outline)
 }
 
 input[type="checkbox"] {
   display: inline-block;
   box-shadow: unset;
   opacity: 0;
+  height: 0;
+  width: 0;
   width: initial;
 }
 
@@ -77,8 +86,11 @@ input[type="checkbox"] + label::before {
   transition: border var(--transition), box-shadow var(--transition);
 }
 
-input[type="checkbox"]:active + label::before {
-  box-shadow: 0 0 0 3px var(--color-primary-ghost);
+input[type="checkbox"]:active + label::before,
+input[type="checkbox"]:focus + label::before
+ {
+  border-color: var(--color-primary);
+  box-shadow: var(--focus-outline)
 }
 
 input[type="checkbox"]:checked + label::before {
@@ -106,6 +118,41 @@ input[type="checkbox"]:checked + label::after {
   background-color: var(--color-primary);
 }
 
+/*
+ * Select
+ */
+select {
+  padding: var(--field-padding);
+
+  border: 1px solid var(--color-gray);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 0 rgba(0,0,0,0.025);
+  font-size: inherit;
+  width: 100%;
+}
+
+/*
+ * Textarea
+ */
+textarea {
+  padding: var(--field-padding);
+
+  border: 1px solid var(--color-gray);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 0 rgba(0,0,0,0.025);
+  font-family: inherit;
+  font-size: inherit;
+  min-height: 4ch;
+  min-width: 100%;
+  max-width: 100%;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: var(--focus-outline);
+}
+
 button {
   padding: 0.8rem 2rem;
 
@@ -114,7 +161,7 @@ button {
   background-color: var(--color-gray);
   cursor: pointer;
   font-family: inherit;
-  font-weight: 500;
+  font-weight: 600;
 
   transition: background-color var(--transition);
 }
@@ -137,5 +184,5 @@ button[type="submit"]:hover {
 }
 
 button[type="submit"]:focus {
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.15), 0 0 0 3px var(--color-primary-ghost);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.15), var(--focus-outline)
 }
