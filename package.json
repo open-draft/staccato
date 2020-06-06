@@ -1,0 +1,12 @@
+{
+  "name": "staccato-css",
+  "version": "0.1.0",
+  "description": "Class-less CSS framework",
+  "main": "framework/index.css",
+  "repository": "git@github.com:open-draft/staccato.git",
+  "author": "Artem Zakharchenko <kettanaito@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "framework"
+  ]
+}
